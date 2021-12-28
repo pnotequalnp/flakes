@@ -6,7 +6,8 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         hs = pkgs.haskellPackages;
-      in rec {
+      in
+      rec {
         packages.project = hs.callCabal2nix "project" ./. { };
         defaultPackage = packages.project;
 
@@ -14,6 +15,13 @@
         defaultApp = apps.project;
 
         devShell = packages.project.env.overrideAttrs
-          (super: { buildInputs = super.buildInputs ++ [ hs.cabal-install ]; });
+          (super: {
+            buildInputs = with hs; super.buildInputs ++ [
+              cabal-install
+              fourmolu
+              haskell-language-server
+              hlint
+            ];
+          });
       });
 }
