@@ -5,7 +5,7 @@ license:            ISC
 license-file:       LICENSE
 author:             Kevin Mullins
 maintainer:         kevin@pnotequalnp.com
-copyright:          Kevin Mullins 2021
+copyright:          Kevin Mullins 2022
 
 executable project
     hs-source-dirs:   app
