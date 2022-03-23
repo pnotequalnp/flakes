@@ -1,0 +1,55 @@
+cabal-version: 2.4
+name:          project
+synopsis:      A basic project
+version:       0.1.0.0
+package-url:   https://github.com/pnotequalnp/project
+license:       ISC
+license-file:  LICENSE
+author:        Kevin Mullins
+maintainer:    kevin@pnotequalnp.com
+copyright:     Kevin Mullins 2022
+
+common base
+  default-language: GHC2021
+  ghc-options:
+    -Wall -Werror=incomplete-patterns -fno-show-valid-hole-fits
+    -Wno-unticked-promoted-constructors
+
+  default-extensions:
+    BlockArguments
+    LambdaCase
+
+  build-depends:
+    , base >=4.16
+
+library
+  import:          base
+  hs-source-dirs:  src
+  exposed-modules:
+    Project
+
+test-suite project-test
+  import:         base
+  hs-source-dirs: test
+  main-is:        Main.hs
+  type:           exitcode-stdio-1.0
+  build-depends:
+    , project
+    , tasty
+    , tasty-hunit
+
+benchmark project-bench
+  import:         base
+  hs-source-dirs: bench
+  main-is:        Main.hs
+  type:           exitcode-stdio-1.0
+  build-depends:
+    , criterion
+    , project
+
+executable project
+  import:         base
+  hs-source-dirs: app
+  main-is:        Main.hs
+  build-depends:
+    , project
