@@ -10,12 +10,13 @@ maintainer:    kevin@pnotequalnp.com
 copyright:     Kevin Mullins 2022
 
 common base
-  default-language: GHC2021
+  default-language:   GHC2021
   ghc-options:
-    -Wall -Werror=incomplete-patterns -fno-show-valid-hole-fits
-    -Wno-unticked-promoted-constructors
+    -Wall -Wcompat -Werror=incomplete-patterns
+    -fno-show-valid-hole-fits -Wno-unticked-promoted-constructors
 
   default-extensions:
+    NoStarIsType
     BlockArguments
     LambdaCase
 
