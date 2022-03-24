@@ -16,9 +16,12 @@ common base
     -fno-show-valid-hole-fits -Wno-unticked-promoted-constructors
 
   default-extensions:
-    NoStarIsType
     BlockArguments
+    DerivingVia
     LambdaCase
+    LexicalNegation
+    NoStarIsType
+    NumDecimals
 
   build-depends:
     , base >=4.16
