@@ -1,0 +1,29 @@
+cabal-version: 2.4
+name:          project
+synopsis:      A basic benchmark
+version:       0.1.0.0
+license:       ISC
+license-file:  LICENSE
+author:        Kevin Mullins
+maintainer:    kevin@pnotequalnp.com
+copyright:     Kevin Mullins 2022
+
+executable benchmark
+  hs-source-dirs:     bench
+  main-is:            Main.hs
+  default-language:   GHC2021
+  ghc-options:
+    -O2 -Wall -Wcompat -Werror=incomplete-patterns
+    -fno-show-valid-hole-fits -Wno-unticked-promoted-constructors
+
+  default-extensions:
+    BlockArguments
+    DerivingVia
+    LambdaCase
+    LexicalNegation
+    NoStarIsType
+    NumDecimals
+
+  build-depends:
+    , base       >=4.16
+    , criterion

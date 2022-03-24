@@ -12,6 +12,11 @@
         path = ./haskell-github;
         description = "Flake with a callCabal2nix project with GitHub Actions workflows";
       };
+
+      haskell-benchmark = {
+        path = ./haskell-benchmark;
+        description = "Basic benchmark suite for quick benchmarks";
+      };
     };
   };
 }
